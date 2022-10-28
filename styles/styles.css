@@ -605,3 +605,11 @@ margin-left: 15%;
     text-align: center;
     margin-bottom: 10px;
   }
+
+  .sitemap {
+    text-align: center;
+    color: #ffffff;
+  }
+  .sitemap a {
+    color: #ffffff;
+  }
