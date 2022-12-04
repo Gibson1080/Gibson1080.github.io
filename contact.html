@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-
+        <div id="error" class="errorMessage"></div>
         <div class="layout_padding2-top">
           <div class="row">
             <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
@@ -49,23 +49,32 @@
                 <div class="contact_form-container">
                   <div>
                     <div>
-                      <input type="text" placeholder="Full Name" />
+                      <input
+                        id="username"
+                        type="text"
+                        placeholder="Full Name"
+                      />
                     </div>
                     <div>
-                      <input type="email" placeholder="Email" />
+                      <input id="email" type="email" placeholder="Email" />
                     </div>
                     <div>
-                      <input type="text" placeholder="Phone Number" />
+                      <input
+                        id="phone"
+                        type="text"
+                        placeholder="Phone Number"
+                      />
                     </div>
                     <div>
                       <input
                         type="text"
+                        id="message"
                         class="message_input"
                         placeholder="Message"
                       />
                     </div>
                     <div>
-                      <button type="submit">Send</button>
+                      <button id="send" type="submit">Send</button>
                     </div>
                   </div>
                 </div>
@@ -114,8 +123,12 @@
           <div class="col-md-12 col-lg-9">
             <div class="info_form">
               <form action="">
-                <input type="text" placeholder="Enter your email" />
-                <button>subscribe</button>
+                <input
+                  id="emailsubscribe"
+                  type="text"
+                  placeholder="Enter your email"
+                />
+                <button id="subscribe">subscribe</button>
               </form>
             </div>
           </div>
@@ -130,5 +143,6 @@
         </div>
       </div>
     </section>
+    <script src="js/index.js"></script>
   </body>
 </html>

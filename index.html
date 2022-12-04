@@ -34,14 +34,57 @@
           Get the experience of a lifetime with our African safaris. We offer a
           wide range of safaris to suit your needs.
         </p>
+        <div class="center-counter container">
+          <div class="counter-container">
+            <i class="fab fa-instagram fa-4x"></i>
+            <div class="counter" data-target="200">0+</div>
+            <span>Safaris Conducted</span>
+          </div>
+          <div class="counter-container">
+            <i class="fab fa-youtube fa-4x"></i>
+            <div class="counter" data-target="5000">0+</div>
+            <span> Customers Served</span>
+          </div>
+          <div class="counter-container">
+            <i class="fab fa-tiktok fa-4x"></i>
+            <div class="counter" data-target="54">0+</div>
+            <span> Countries Covered</span>
+          </div>
+        </div>
       </div>
-    </div>
 
+    </div>
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      const speed = 200; // The lower the slower
+
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-target");
+          const count = +counter.innerText;
+
+          // Lower inc to slow and higher to slow
+          const inc = target / speed;
+
+          // Check if target is reached
+          if (count < target) {
+            // Add inc to count and output in counter
+            counter.innerText = Math.ceil(count + inc);
+            // Call function every ms
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+      });
+    </script>
     <section class="container content">
       <div class="row">
         <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/african15.jpg" alt="" />
+          <div class="img-box about-image">
+            <img id="aboutimage" src="images/african15.jpg" alt="" />
           </div>
         </div>
         <div class="col-md-5">
@@ -63,6 +106,12 @@
         </div>
       </div>
     </section>
+    <script>
+
+
+
+
+    </script>
 
     <section class="safari_section layout_padding">
       <div class="container">
@@ -76,52 +125,53 @@
             <img src="images/african2.jpg" alt="Kenyan Buffalo" />
             <div class="link_box">
               <h5>Kenyan Buffalo</h5>
-              <a href=""> Book Now </a>
+              <a id="book" href=""> Book Now </a>
             </div>
           </div>
           <div class="box">
             <img src="images/african3.jpg" alt="Kenyan Giraffes" />
             <div class="link_box">
               <h5>Kenyan Giraffes</h5>
-              <a href=""> Book Now </a>
+              <a  id="book" href=""> Book Now </a>
             </div>
           </div>
           <div class="box">
             <img src="images/african17.jpg" alt="Ugandan Giraffes" />
             <div class="link_box">
               <h5>Ugandan Giraffes</h5>
-              <a href=""> Book Now </a>
+              <a  id="book" href=""> Book Now </a>
             </div>
           </div>
           <div class="box">
             <img src="images/african4.jpg" alt="Tanzanian Giraffes" />
             <div class="link_box">
               <h5>Tanzanian Giraffes</h5>
-              <a href=""> Book Now </a>
+              <a  id="book" href=""> Book Now </a>
             </div>
           </div>
           <div class="box">
             <img src="images/african5.jpg" alt="Kenyan Elephants" />
             <div class="link_box">
               <h5>Kenyan Elephants</h5>
-              <a href=""> Book Now </a>
+              <a  id="book" href=""> Book Now </a>
             </div>
           </div>
           <div class="box">
             <img src="images/african6.jpg" alt="Tanzanian Jungle" />
             <div class="link_box">
               <h5>Tanzanian Jungle</h5>
-              <a href=""> Book Now </a>
+              <a id="book"  href=""> Book Now </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section>
       <div class="heading_container safaripackages">
         <h2>Safari Packages</h2>
       </div>
-
+      <div id="packageinfo"></div>
       <div id="safaritable">
         <table>
           <!--  -->
@@ -179,16 +229,17 @@
             <!--  -->
             <tr>
               <td></td>
-              <td><button>Book</button></td>
-              <td><button>Book</button></td>
-              <td><button>Book</button></td>
-              <td><button>Book</button></td>
+              <td><button id="bookpackage">Book</button></td>
+              <td><button id="bookpackage">Book</button></td>
+              <td><button id="bookpackage">Book</button></td>
+              <td><button id="bookpackage">Book</button></td>
             </tr>
           </tbody>
           <!--  -->
         </table>
       </div>
     </section>
+    <!-- <div id="error" class="errorMessage"></div> -->
 
     <section class="contact_section layout_padding-bottom">
       <div class="container-fluid">
@@ -199,7 +250,7 @@
             </div>
           </div>
         </div>
-
+        <div id="error" class="errorMessage"></div>
         <div class="layout_padding2-top">
           <div class="row">
             <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
@@ -207,23 +258,32 @@
                 <div class="contact_form-container">
                   <div>
                     <div>
-                      <input type="text" placeholder="Full Name" />
+                      <input
+                        id="username"
+                        type="text"
+                        placeholder="Full Name"
+                      />
                     </div>
                     <div>
-                      <input type="email" placeholder="Email" />
+                      <input id="email" type="email" placeholder="Email" />
                     </div>
                     <div>
-                      <input type="text" placeholder="Phone Number" />
+                      <input
+                        id="phone"
+                        type="text"
+                        placeholder="Phone Number"
+                      />
                     </div>
                     <div>
                       <input
                         type="text"
+                        id="message"
                         class="message_input"
                         placeholder="Message"
                       />
                     </div>
                     <div>
-                      <button type="submit">Send</button>
+                      <button id="send" type="submit">Send</button>
                     </div>
                   </div>
                 </div>
@@ -272,8 +332,8 @@
           <div class="col-md-12 col-lg-9">
             <div class="info_form">
               <form action="">
-                <input type="text" placeholder="Enter your email" />
-                <button>subscribe</button>
+                <input id="emailsubscribe" type="text" placeholder="Enter your email" />
+                <button id="subscribe">subscribe</button>
               </form>
             </div>
           </div>
@@ -288,5 +348,10 @@
         </div>
       </div>
     </section>
+    <script src="js/index.js"></script>
+
+  
+
   </body>
+
 </html>
